@@ -1,0 +1,82 @@
+.row {
+  display: flex;
+  margin: 0px -12px;
+
+  @media (max-width: $md1+px) {
+    margin: 0px -8px;
+  }
+
+  @media (max-width: $md2+px) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.item {
+  flex: 0 1 33.333%;
+  padding: 0px 12px;
+  margin: 0px 0px 32px 0px;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: $md1+px) {
+    padding: 0px 8px;
+  }
+
+  @media (max-width: $md2+px) {
+    flex: 0 1 50%;
+    flex-direction: row;
+    margin: 0px 0px 20px 0px;
+  }
+
+  @media (max-width: $md3+px) {
+    flex: 0 1 100%;
+  }
+}
+
+.image {
+  flex: 1 1 100%;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 0px 0px 16px 0px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: $md2+px) {
+    flex: 1 1 50%;
+    margin: 0px 0px 0px 0px;
+  }
+}
+
+.info {
+  @media (max-width: $md2+px) {
+    flex: 0 1 75%;
+    padding: 17px 0px 0px 20px;
+  }
+}
+
+.name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 14px;
+  color: $dark_grey;
+  margin: 0px 0px 8px 0px;
+}
+
+.position {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 148%;
+}
+
+.descr {
+  margin: 0px 0px 49px 0px;
+
+  @media (max-width: $md3+px) {
+    margin: 0px 0px 32px 0px;
+  }
+}

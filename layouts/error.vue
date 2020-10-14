@@ -1,81 +1,24 @@
 <template>
-    <div class="errorBlock">
-        <div class="errorBlock-title">An error has occurred</div>
-        <div class="errorBlock-text">Please refresh the page</div>
-        <a href="#" @click="reLoad()" class="btn errorBlock-btn "><span>Reload page</span></a>
+    <div :class="$style.block" class="errorBlock">
+        <div :class="$style.title" class="errorBlock-title">An error has occurred</div>
+        <div :class="$style.text" class="errorBlock-text">Please refresh the page</div>
+        <a href="/" :class="$style.btn" class="btn errorBlock-btn">
+            <span>Reload page</span>
+        </a>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'errorPage',
+    name: "errorPage",
     props: {
         error: {
             type: Object,
-            default: () => {},
-        },
-    },
-    methods:{
-        reLoad(){
-            window.location.href = '/';
+            default: () => {}
+        }
     }
-    }
-}
+};
 </script>
 
-<style lang="scss">
-    .errorBlock { 
-        max-width: 1312px;
-        margin: 0px 64px 48px 64px;;
-        display: flex;
-        flex-direction: column;
-        justify-content:center;
-        align-items:center;
-        min-height: 708px;
-        background: #F3F4F7;
-        border-radius: 48px;
-        @media (max-width:$md3+px){
-            margin: 0px 10px 20px 10px;
-            padding: 24px 28px 0px 28px;
-            min-height: 600px;
-        }
-        @media (max-width:$md4+px){
-            margin: 0px 0px 20px 0px;
-            padding: 26px 16px 0px 16px;
-        }
-        @media (min-width:1440px){
-            width: 90vw;
-            margin: 0 auto;
-            max-width: none;
-        }
-        @media (min-width:1920px){
-            margin: 0 auto;
-            max-width: 1728px;
-        }
-    }
-    .errorBlock-title {
-        text-align: center; 
-        font-weight: 700;
-        font-size: 40px;
-        line-height: 120%;
-        color: $dark_grey;
-        margin: 0px 0px 24px 0px;
-        @media (max-width:$md3+px){
-            font-size: 32px;
-            margin: 0px 0px 18px 0px;
-        }
-    }
-    .errorBlock-text { 
-        font-weight: 300;
-        font-size: 14px;
-        line-height: 146%;
-        color: #677B8F;
-        margin: 0px 0px 40px 0px;
-        @media (max-width:$md3+px){
-            margin: 0px 0px 26px 0px;
-        }
-    }
-    .errorBlock-btn { 
-        width: 161px;
-    }
+<style module src="@/modulesScss/error.scss" lang="scss">
 </style>
